@@ -1,0 +1,137 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size:14px
+}
+ul{list-style: none}
+small{font-size:80%;color: #888888;}
+
+#bobb {
+    width: 340px;
+    height:580px;
+    margin:40px auto 20px auto;
+    border: solid 1px #cccccc;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    overflow: hidden;
+}
+
+#outborder {
+    width: 340px;
+    height:580px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+#header {
+    height:70px;
+    background-color:red;
+}
+
+nav img{
+    width: 25px;
+    padding:22px 19px;
+    height:25px;
+    cursor: pointer;
+}
+
+.menu{
+    float: left;
+}
+
+.explorer{
+    float: right;
+}
+
+nav div{
+    width:180px;
+    height:70px;
+    padding:0 15px;
+    float: left;
+}
+
+nav div img{
+    width: 25px;
+    height:25px;
+    padding:22px 15px;
+    cursor: pointer;
+}
+
+#content {
+    width:340px;
+    height:450px;
+    overflow: hidden;
+}
+#content-2 {
+    width: 360px;
+    height:450px;
+    overflow-y: scroll;
+}
+
+#content-2 ul{
+    height:auto;
+}
+
+#content-2 li {
+    padding-top: 8px;
+    height:47px;
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+}
+
+.hurn.active{
+    display:inline-block;
+}
+
+.hurn{
+    width: 20px;
+    height: 20px;
+    padding: 8px 0 0 15px;
+    float:left;
+    display: none;
+}
+
+.leftContent{
+    padding-left: 15px;
+    width: 68%;
+    float:left;
+}
+
+.details {
+    margin: 11px 15px;
+    width: 25px;
+    height:25px;
+    display:block;
+    float:right
+}
+
+#footer {
+    height:60px;
+    cursor: pointer;
+}
+
+#nextpage {
+    float:left;
+    margin-right: 5px;
+    height: 100%;
+    width:260px ;
+}
+
+#footer ul {
+    float:left;
+    width:190px;
+    padding:5px;
+    overflow: hidden;
+    line-height: 25px;
+}
+
+#play-pause-1 {
+    width: 48px;
+    height:48px;
+    float:left;
+    margin-top: 5px;
+    background-image: url("images/pngs/play.png")
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MusicPlayer</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="player.css">
+</head>
+<body>
+<div id="bobb">
+    <div id="outborder">
+        <div id="header">
+            <nav>
+                <img class="menu" src="images/pngs/menu.png">
+                <div>
+                    <img id="selfMusic" src="images/pngs/selfmusic.png">
+                    <img id="intMusic" src="images/pngs/intmusic.png">
+                    <img id="friends" src="images/pngs/friends.png">
+                </div>
+                <img class="explorer" src="images/pngs/explorer.png">
+            </nav>
+        </div>
+        <div id="content">
+            <div id="content-2">
+                <ul id="songlist">
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="nextpage">
+                <img id="pic" style="padding:5px;width:50px;height:50px;float: left;cursor: pointer;"
+                     src="images/singerPics/Lights.png">
+                <ul>
+                    <li id="songName">Lights</li>
+                    <li id="lyric">
+                        <small>Ellie Goulding</small>
+                    </li>
+                </ul>
+            </div>
+            <div id="play-pause-1"></div>
+        </div>
+    </div>
+
+    <div id="outborder-2">
+        <div id="filter_blur"></div>
+        <div id="hh">
+            <div id="header-2">
+                <img id="backto" style="padding:22px 20px 0 20px;width:25px;height:25px;float: left;"
+                     src="images/pngs/arrow.png">
+                <ul>
+                    <li id="songName2">Lights</li>
+                    <li id="singer">
+                        <small>Ellie Goulding</small>
+                    </li>
+                </ul>
+                <img style="padding:22px 20px 0 20px;width:26px;height:26px;float: right;" src="images/pngs/share.png">
+            </div>
+            <div id="lryci-content">
+                <div id="volumebar">
+                    <img style="width: 20px;height:20px;padding-right: 10px ;color:white"
+                         src="images/pngs/smallhurn.png">
+                    <input title="volumebar" type="range" id="volumeRange" min="0" max="100">
+                </div>
+                <div id="lryci">
+                    <div id="lryci-2">
+                        <p style="height:144px;width:340px"></p>
+                        <div style="width: 340px" id="lryci-scroll">
+                        </div>
+                        <p class="space" style="height:178px;width:340px"></p>'
+                    </div>
+                </div>
+            </div>
+            <div id="progressBar">
+                <div style="height: 35px;">
+                    <div id="time-1">00:00</div>
+                    <input title="progressBar" type="range" id="playRange" style="display: inline-block;float: left">
+                    <div id="duration"></div>
+                </div>
+                <div id="playControl">
+                    <img id="cicyle" style="padding:0 19px 6px 19px;width:25px;height: 25px;cursor: pointer" src="images/pngs/cicyle.png"><img
+                        id="pervSong" style="padding:0 13px;width:40px;height:40px;cursor: pointer;"
+                        src="images/pngs/prev.png">
+                    <div id="play-pause-2"></div>
+                    <img id="nextSong" style="padding:0 15px;width:40px;height:40px;cursor: pointer;"
+                         src="images/pngs/next.png"><img id="playList" style="cursor: pointer;padding:0 19px 6px 19px;width:25px;height: 25px"
+                                                         src="images/pngs/menu.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<audio id="audio1" style="float: left;"></audio>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
