@@ -248,8 +248,8 @@ $(function () {
                             scrollTop: $this3.attr('data-scroll')     //拉去该歌词元素的“data-scroll”属性值  设置父元素的scroll-top属性值
                         });
 
-                        $('.white').removeClass('white');
-                        $this3.addClass('white');                    //添加white类名来改变当前歌词颜色；
+                        $this3.addClass('white');
+                        $this3.prev().removeClass('white')                   //添加white类名来改变当前歌词颜色；
                     }
                 }, 500);
 
@@ -330,8 +330,8 @@ $(function () {
                             scrollTop: $this3.attr('data-scroll')     //拉去该歌词元素的“data-scroll”属性值  设置父元素的scroll-top属性值
                         });
 
-                        $('.white').removeClass('white');
-                        $this3.addClass('white'); 
+                        $this3.addClass('white');
+                        $this3.prev().removeClass('white')
                     }
                 }, 500);
 
@@ -410,8 +410,8 @@ $(function () {
                             scrollTop: $this3.attr('data-scroll')     //拉去该歌词元素的“data-scroll”属性值  设置父元素的scroll-top属性值
                         });
 
-                        $('.white').removeClass('white');
-                        $this3.addClass('white'); 
+                        $this3.addClass('white');
+                        $this3.prev().removeClass('white')
                     }
                 }, 500);
 
