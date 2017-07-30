@@ -139,7 +139,7 @@ $(function () {
 
     myAudio.src = "music/Ellie Goulding - Lights.mp3";
 
-    $('#volumeRange').on('input', function () {                   //监测input事件调节音量
+    $('#volumeRange').on('change', function () {                   //监测input事件调节音量
         myAudio.volume = voice.value / 100;
     });
 
@@ -161,7 +161,7 @@ $(function () {
     }
 
     //监听input事件动态改变已播放时间
-    $playRange.on('input', function () {
+    $playRange.on('change', function () {
         myAudio.currentTime = playRange.value;
         timeShow();
     });
@@ -251,7 +251,7 @@ $(function () {
                     if (!myAudio.paused) {
                         var $this3 = $('.lrycilist[data-play-time = ' + parseInt(myAudio.currentTime) + ']');    //寻找声明当前歌曲播放时间所对应的歌词元素
 
-                        $('#lryci-2').animate({
+                        $('#lryci-2').stop().animate({
                             scrollTop: $this3.attr('data-scroll')     //拉去该歌词元素的“data-scroll”属性值  设置父元素的scroll-top属性值
                         });
 
