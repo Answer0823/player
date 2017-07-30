@@ -52,35 +52,79 @@ ul{list-style: none}
 }
 
 #volumebar {
-    padding:5px 0 15px 30px;
-}
-
-#volumeRange{
-    width:230px;
-    border-radius: 1px;
+    height:35px;
     cursor: pointer;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
-    height:2px;
-}
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height:2px;
-    border-radius: 50%;
-    margin-top: -5px;
-}
-input[type=range]:focus {
-    outline: none;
+#volumeRange {
+    width:230px;
+    cursor: pointer;
+    float:left;
+    margin-top: 15px;
 }
 
-#volumeRange::-moz-range-thumb{
-    background-color: white;
-    height: 10px;
-    width: 10px;
+input[type=range]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
-#volumeRange::-moz-range-progress{
+input[type=range]:focus {
+    outline:none;
+}
+input[type=range]::-webkit-slider-thumb {            /*webkit 浏览器，Chrome, Safari, Opera等去除默认样式*/
+    -webkit-appearance: none;
+    height:10px;
+    width:10px;
+    border-radius: 50%;
     background-color: white;
+    margin-top: -4px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 2px;
+    border-radius: 2px;
+    background: white;
+    line-height: 14px;
+}
+
+
+/*火狐range样式*/
+
+input[type=range]::-moz-range-thumb {
+    -moz-appearance:none;
+    border:none;
+    height:10px;
+    width:10px;
+    background: white;
+}
+
+input[type=range]::-moz-range-track {
+    border:none;
+    height:2px;
+    border-radius: 2px;
+    background: #bbb;
+}
+input[type=range]::-moz-range-progress {
+    background: white;
+}
+
+/*IE Range样式*/
+
+input[type=range]::-ms-thumb{
+    height:10px;
+    width:10px;
+    border-radius: 50%;
+    background: white;
+}
+
+input[type=range]::-ms-track {
+    background: #bbb;
+    height:2px;
+    border-radius: 2px;
+    border: none;
+    border-color: transparent; /*去除原有边框*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: white;
 }
 
 #lryci {
@@ -117,20 +161,9 @@ input[type=range]:focus {
     height:110px;
 }
 
-#playRange::-moz-range-thumb{
-    background-color: white;
-    height: 12px;
-    width: 12px;
-}
-
-#playRange::-moz-range-progress{
-    background-color: #fff;
-}
-
 #playRange {
+    margin-top: 7px;
     width:230px;
-    padding-top:5px;
-    padding-bottom: 5px;
     cursor: pointer;
 }
 
