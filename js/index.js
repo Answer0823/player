@@ -110,10 +110,12 @@ $(function () {
     $('#play-pause-1,#play-pause-2').on('click', function () {
         if (myAudio.paused) {
             myAudio.play();
+            $('#albumimgs').css({animationPlayState:"running"});
             $('#play-pause-1').css({backgroundImage: "url(images/pngs/pause.png)"});
             $('#play-pause-2').css({backgroundImage: "url(images/pngs/pause-1.png)"});
         } else {
             myAudio.pause();
+            $('#albumimgs').css({animationPlayState:"paused"});
             $('#play-pause-1').css({backgroundImage: "url(images/pngs/play.png)"});
             $('#play-pause-2').css({backgroundImage: "url(images/pngs/play-1.png)"});
         }
@@ -135,6 +137,8 @@ $(function () {
     $('#volumeRange').on('change', function () {                   //监测input事件调节音量
         myAudio.volume = voice.value / 100;
     });
+
+
 
     //显示已播放时长函数
     function timeShow() {
@@ -201,8 +205,14 @@ $(function () {
         myAudio.play();                                                        //点击列表默认播放
 
         imgs.src = "images/singerPics/" + imagesrc + ".png";
+
+        $('#filter_blur,#albumimgs').css({
+            backgroundImage:"url("+imgs.src+")"
+        }).delay("slow");
+
         $('#songName,#songName2').html(singnames);
-        $('#singer').html(songers);                                                //替换footer内歌手图片及歌曲名
+        $('#singer').html(songers);                                          //替换footer内歌手图片及歌曲名
+        $('#singleLrc').find('small').html(songers);
 
 
         $('#play-pause-1').css({backgroundImage: "url(images/pngs/pause.png)"});
@@ -236,14 +246,15 @@ $(function () {
                     lryciSens[i] = parseInt(lryciTime[i][4] + lryciTime[i][5]);
                     playTime[i] = lryciMins[i] * 60 + lryciSens[i];
                     //每句歌词所属的<p>元素中“data-play-time”属性存放已播放时长"data-scroll"属性存放父元素<div id="lryci-2">的scoll-top值
-                    $lryciScroll.append('<p class="lrycilist" data-play-time="' + playTime[i] + '" data-scroll="' + (parseInt($('#lryci-scroll').height()) + 10) + '">' + lryciArry[i + 1] + '</p>');
+                    $lryciScroll.append('<p class="lrycilist" data-play-time="' + playTime[i] + '" data-scroll="' + (parseInt($('#lryci-scroll').height()) + 40) + '">' + lryciArry[i + 1] + '</p>');
                 }
 
                 //设置计时器，根据播放时间滚动歌词
                 setInterval(function () {
                     if (!myAudio.paused) {
                         var $this3 = $('.lrycilist[data-play-time = ' + parseInt(myAudio.currentTime) + ']');    //寻找声明当前歌曲播放时间所对应的歌词元素
-
+                        var text = $('.white').html();
+                        $('#singleLrc').find('small').html(text);
                         $('#lryci-2').stop().animate({
                             scrollTop: $this3.attr('data-scroll')     //拉去该歌词元素的“data-scroll”属性值  设置父元素的scroll-top属性值
                         });
@@ -259,6 +270,7 @@ $(function () {
         Lryci.send();
 
     });
+
 
     //播放下一首
     $('#nextSong').on('click', function () {
@@ -284,8 +296,9 @@ $(function () {
 
         $('#songName,#songName2').html(singnames);
         $('#singer').html(songers);
+        $('#singleLrc').find('small').html(songers);
 
-        $('#filter_blur').css({
+        $('#filter_blur,#albumimgs').css({
             backgroundImage:"url("+imgs.src+")"
         }).delay("slow");
 
@@ -318,14 +331,15 @@ $(function () {
                     lryciSens[i] = parseInt(lryciTime[i][4] + lryciTime[i][5]);
                     playTime[i] = lryciMins[i] * 60 + lryciSens[i];
                     //每句歌词所属的<p>元素中“data-play-time”属性存放已播放时长"data-scroll"属性存放父元素<div id="lryci-2">的scoll-top值
-                    $lryciScroll.append('<p class="lrycilist" data-play-time="' + playTime[i] + '" data-scroll="' + (parseInt($('#lryci-scroll').height()) + 10) + '">' + lryciArry[i + 1] + '</p>');
+                    $lryciScroll.append('<p class="lrycilist" data-play-time="' + playTime[i] + '" data-scroll="' + (parseInt($('#lryci-scroll').height()) + 40) + '">' + lryciArry[i + 1] + '</p>');
                 }
 
                 //设置计时器，根据播放时间滚动歌词
                 setInterval(function () {
                     if (!myAudio.paused) {
                         var $this3 = $('.lrycilist[data-play-time = ' + parseInt(myAudio.currentTime) + ']');    //寻找声明当前歌曲播放时间所对应的歌词元素
-
+                        var text = $('.white').html();
+                        $('#singleLrc').find('small').html(text);
                         $('#lryci-2').stop().animate({
                             scrollTop: $this3.attr('data-scroll')     //拉去该歌词元素的“data-scroll”属性值  设置父元素的scroll-top属性值
                         });
@@ -364,8 +378,9 @@ $(function () {
 
         $('#songName,#songName2').html(singnames);
         $('#singer').html(songers);
+        $('#singleLrc').find('small').html(songers);
 
-        $('#filter_blur').css({
+        $('#filter_blur,#albumimgs').css({
             backgroundImage:"url("+imgs.src+")"
         });
 
@@ -398,14 +413,15 @@ $(function () {
                     lryciSens[i] = parseInt(lryciTime[i][4] + lryciTime[i][5]);
                     playTime[i] = lryciMins[i] * 60 + lryciSens[i];
                     //每句歌词所属的<p>元素中“data-play-time”属性存放已播放时长"data-scroll"属性存放父元素<div id="lryci-2">的scoll-top值
-                    $lryciScroll.append('<p class="lrycilist" data-play-time="' + playTime[i] + '" data-scroll="' + (parseInt($('#lryci-scroll').height()) + 10) + '">' + lryciArry[i + 1] + '</p>');
+                    $lryciScroll.append('<p class="lrycilist" data-play-time="' + playTime[i] + '" data-scroll="' + (parseInt($('#lryci-scroll').height()) + 40) + '">' + lryciArry[i + 1] + '</p>');
                 }
 
                 //设置计时器，根据播放时间滚动歌词
                 setInterval(function () {
                     if (!myAudio.paused) {
                         var $this3 = $('.lrycilist[data-play-time = ' + parseInt(myAudio.currentTime) + ']');    //寻找声明当前歌曲播放时间所对应的歌词元素
-
+                        var text = $('.white').html();
+                        $('#singleLrc').find('small').html(text);
                         $('#lryci-2').stop().animate({
                             scrollTop: $this3.attr('data-scroll')     //拉去该歌词元素的“data-scroll”属性值  设置父元素的scroll-top属性值
                         });
@@ -424,7 +440,7 @@ $(function () {
     //页面切换
     $('#nextpage').on('click', function () {
         $('#outborder').css({
-            marginTop: -580
+            marginTop: -660
         });
         $('#filter_blur').css({
             backgroundImage:"url("+imgs.src+")"
@@ -444,5 +460,14 @@ $(function () {
         $('#hh').css({
             position:"static"
         })
+    });
+
+    $('#albumpic').click(function () {
+        $(this).addClass('active3');
+        $('#lryci-content').removeClass('active3');
+    });
+    $('#lryci-content').click(function () {
+        $(this).addClass('active3');
+        $('#albumpic').removeClass('active3');
     })
 });

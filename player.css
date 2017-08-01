@@ -1,29 +1,32 @@
 * {
-    margin:0;
-    padding:0;
-    font-family: "Microsoft YaHei", sans-serif;
-    font-size:14px
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, "Microsoft YaHei", sans-serif;
+    font-size: 14px
 }
-ul{list-style: none}
+
+ul {
+    list-style: none
+}
 
 #outborder-2 {
     width: 340px;
-    height:580px;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    border-radius:4px;
+    height: 580px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     overflow: hidden;
     position: relative;
 }
 
 #filter_blur {
     height: 580px;
-    width:340px;
+    width: 340px;
     background-repeat: no-repeat;
     background-image: inherit;
     background-size: cover;
     background-position: center;
-    filter: blur(7px) brightness(.4);
+    filter: blur(18px) brightness(.4);
     position: absolute;
 }
 
@@ -32,52 +35,57 @@ ul{list-style: none}
 }
 
 #singer {
-    font-size: 12.8px;
+    font-size: 14px;
     color: #cccccc;
 }
 
 #header-2 {
-    height:70px;
-    color:white;
+    height: 70px;
+    color: white;
 }
 
 #header-2 ul {
     line-height: 25px;
-    padding-top:10px;
-    float:left;
+    padding-top: 10px;
+    float: left;
 }
 
 #lryci-content {
-    height:400px;
+    height: 390px;
+    position: absolute;
+
 }
 
 #volumebar {
-    height:35px;
+    height: 35px;
     cursor: pointer;
 }
 
 #volumeRange {
-    width:230px;
+    width: 230px;
     cursor: pointer;
-    float:left;
+    float: left;
     margin-top: 15px;
 }
 
-input[type=range]{
+input[type=range] {
     -webkit-appearance: none;
     -moz-appearance: none;
 }
+
 input[type=range]:focus {
-    outline:none;
+    outline: none;
 }
-input[type=range]::-webkit-slider-thumb {            /*webkit 浏览器，Chrome, Safari, Opera等去除默认样式*/
+
+input[type=range]::-webkit-slider-thumb { /*webkit 浏览器，Chrome, Safari, Opera等去除默认样式*/
     -webkit-appearance: none;
-    height:10px;
-    width:10px;
+    height: 10px;
+    width: 10px;
     border-radius: 50%;
     background-color: white;
     margin-top: -4px;
 }
+
 input[type=range]::-webkit-slider-runnable-track {
     height: 2px;
     border-radius: 2px;
@@ -85,119 +93,155 @@ input[type=range]::-webkit-slider-runnable-track {
     line-height: 14px;
 }
 
-
 /*火狐range样式*/
 
 input[type=range]::-moz-range-thumb {
-    -moz-appearance:none;
-    border:none;
-    height:10px;
-    width:10px;
+    -moz-appearance: none;
+    border: none;
+    height: 10px;
+    width: 10px;
     background: white;
 }
 
 input[type=range]::-moz-range-track {
-    border:none;
-    height:2px;
+    border: none;
+    height: 2px;
     border-radius: 2px;
     background: #bbb;
 }
+
 input[type=range]::-moz-range-progress {
     background: white;
 }
 
 /*IE Range样式*/
 
-input[type=range]::-ms-thumb{
-    height:10px;
-    width:10px;
+input[type=range]::-ms-thumb {
+    height: 10px;
+    width: 10px;
     border-radius: 50%;
     background: white;
 }
 
 input[type=range]::-ms-track {
     background: #bbb;
-    height:2px;
+    height: 2px;
     border-radius: 2px;
     border: none;
     border-color: transparent; /*去除原有边框*/
     color: transparent;
 }
+
 input[type=range]::-ms-fill-lower {
     background: white;
 }
 
+.active3 {
+    visibility: hidden;
+}
+
+#albumimgs {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    margin:95px 0 0 70px;
+    border-radius: 50%;
+    position: absolute;
+    -moz-animation: move 25s linear infinite;
+    -webkit-animation: move 25s linear infinite;
+    -o-animation: move 25s linear infinite;
+}
+@keyframes move {
+    0% {transform: rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+@-moz-keyframes move {
+    0% {-moz-transform: rotate(0deg)}
+    100%{-moz-transform:rotate(360deg)}
+}
+@-webkit-keyframes move {
+    0% {-webkit-transform: rotate(0deg)}
+    100%{-webkit-transform:rotate(360deg)}
+}
+@-o-keyframes move {
+    0% {-o-transform: rotate(0deg)}
+    100%{-o-transform:rotate(360deg)}
+}
+
 #lryci {
-    width:340px;
-    height: 357px;
-    overflow:hidden;
+    width: 340px;
+    height: 347px;
+    overflow: hidden;
 }
 
 #lryci-scroll {
-    -moz-transition: scrollTop .6s ease-in-out .6s;
-    -webkit-transition: scrollTop .6s ease-in-out .6s;
+    transition: scrollTop .6s linear .6s;
+    -o-transition: scrollTop .6s linear .6s;
+    -moz-transition: scrollTop .6s linear .6s;
+    -webkit-transition: scrollTop .6s linear .6s;
 }
 
 #lryci-2 {
-    width:360px;
-    height: 357px;
+    width: 360px;
+    height: 347px;
     padding-left: -20px;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 .lrycilist.white {
-    color:#ffffff
+    color: #ffffff
 }
 
 .lrycilist {
-    width:100%;
+    width: 100%;
     text-align: center;
-    font-size:15px;
-    margin-top: 20px;
+    font-size: 16px;
+    margin-top: 25px;
     color: #999999
 }
 
 #progressBar {
-    height:110px;
+    height: 110px;
 }
 
 #playRange {
     margin-top: 7px;
-    width:230px;
+    width: 230px;
     cursor: pointer;
 }
 
 #time-1 {
-    margin: 0 10px 0 14px ;
-    height:30px;
-    padding-top:6px;
+    margin: 0 10px 0 14px;
+    height: 30px;
+    padding-top: 6px;
     display: inline-block;
     float: left;
-    color:white;
-    font-size:12px;
+    color: white;
+    font-size: 12px;
 }
 
 #duration {
-    height:30px;
+    height: 30px;
     margin-left: 10px;
-    padding-top:6px;
+    padding-top: 6px;
     display: inline-block;
     float: left;
     color: #ccc;
-    font-size:12px;
+    font-size: 12px;
 }
 
 #playControl {
-    height:50px;
-    margin-top: 5px;
-    padding-left:3px;
+    height: 50px;
+    margin-top: 15px;
+    padding-left: 3px;
 }
 
 #play-pause-2 {
     cursor: pointer;
-    margin:5px 15px 0 15px;
-    width:35px;
-    height:35px;
+    margin: 5px 15px 0 15px;
+    width: 35px;
+    height: 35px;
     display: inline-block;
     background: url("images/pngs/play-1.png") no-repeat;
 }
